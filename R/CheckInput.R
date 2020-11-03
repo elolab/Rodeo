@@ -4,8 +4,8 @@
 CheckInput = function(E, C){
   
   # Check that 'E' and 'C' are some sort of tables and convert them into matrices
-  if(!( class(E) %in% c("matrix", "data.frame") )) stop("'E' should be a matrix or a data frame.")
-  if(!( class(C) %in% c("matrix", "data.frame") )) stop("'C' should be a matrix or a data frame.")
+  if(!any( class(E) %in% c("matrix", "data.frame") )) stop("'E' should be a matrix or a data frame.")
+  if(!any( class(C) %in% c("matrix", "data.frame") )) stop("'C' should be a matrix or a data frame.")
   E = as.matrix(E)
   C = as.matrix(C)
   
