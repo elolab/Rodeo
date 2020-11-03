@@ -9,18 +9,18 @@ Besides R package Rodeo (available also at https://elolab.utu.fi/software/), als
 
 Below is a code example of how to run Rodeo after it has been installed. The example is very simplistic and can not be directly copy pasted if e.g. the input data is stored differently.
 
-	`\# Load required packages`
-	`library(MASS)`
-	`library(Rodeo)`
+	# Load required packages
+	library(MASS)
+	library(Rodeo)
 	
-	`\# Read Input data`
-	`setwd("path/to/my/input/files")`
-	`E = read.table("BulkData.txt", header=T, row.names=1)`
-	`C = read.table("CellTypeProportions.txt", header=T, row.names=1)`
+	# Read Input data
+	setwd("path/to/my/input/files")
+	E = read.table("BulkData.txt", header=T, row.names=1)
+	C = read.table("CellTypeProportions.txt", header=T, row.names=1)
 	
-	`\# Run Rodeo and save the results`
-	`S = Rodeo(E, C)`
-	`write.table(S, file="EstimatedS.txt", sep="\\t", quote=F)`
+	# Run Rodeo and save the results
+	S = Rodeo(E, C)
+	write.table(S, file="EstimatedS.txt", sep="\\t", quote=F)
 
 
 ### Input and output
