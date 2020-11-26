@@ -4,7 +4,7 @@ Rodeo (RObust DEcOnvolution) is a robust deconvolution tool that provides estima
 
 ### Installation and usage
 
-Besides R package Rodeo (available also at https://elolab.utu.fi/software/), also package MASS should be installed (comes with R by default) and activated with R command library(MASS) before using Rodeo. Rodeo can be installed by opening R and typing devtools::install_github("elolab/Rodeo") (requires package devtools to be installed).
+Besides R package Rodeo also package MASS should be installed (comes with R by default) and activated with R command library(MASS) before using Rodeo. Rodeo can be installed by opening R and typing devtools::install_github("elolab/Rodeo") (requires package devtools to be installed).
 
 
 Below is a code example of how to run Rodeo after it has been installed. The example is very simplistic and can not be directly copy pasted if e.g. the input data is stored differently.
