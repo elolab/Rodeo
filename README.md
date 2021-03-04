@@ -20,7 +20,7 @@ Below is a code example of how to run Rodeo after it has been installed. The exa
 	
 	# Run Rodeo and save the results
 	S = Rodeo(E, C)
-	write.table(S, file="EstimatedS.txt", sep="\\t", quote=F)
+	write.table(S, file="EstimatedS.txt", sep="\t", quote=F)
 
 
 ### Input and output
