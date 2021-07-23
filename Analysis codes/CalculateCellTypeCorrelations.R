@@ -1,4 +1,3 @@
-
 # Input: 'Sk' is a known matrix S (cols: cell types, rows: genes),
 #        'Se' is an estimated matrix S (cols: cell types, rows: genes),
 #        'toself' is either TRUE or FALSE.
@@ -14,8 +13,8 @@ CalculateCellTypeCorrelations = function(Sk, Se, toself=TRUE){
   message = paste(length(genes), "common genes", sep=" ")
   print(message)
   celltypes = intersect(colnames(Sk), colnames(Se))
-  Sk = Sk[genes,celltypes]
-  Se = Se[genes,celltypes]
+  Sk = Sk[genes, celltypes]
+  Se = Se[genes, celltypes]
   
   # Calculate cell type correlations
   cors = cor(Sk, Se)

@@ -11,7 +11,7 @@ EstimateS = function(data, C){
   # Detect mean cell type expressions for each gene at time (i.e. j = gene)
   for (j in 1:nrow(data)) {
     
-    sampledata = as.data.frame(cbind(data[j,], t(C))) # rows: samples, cols: bulk expression of the current gene + cell types
+    sampledata = as.data.frame(cbind(data[j, ], t(C))) # rows: samples, cols: bulk expression of the current gene + cell types
     colnames(sampledata)[1] = "BulkExpression"
     
     # Fit regression and extract mean cell type expressions
@@ -22,11 +22,11 @@ EstimateS = function(data, C){
     # Re-fit without cell types with negative coefficient
     while(any(coefs < 0, na.rm=TRUE)){
       indices = indices[which(coefs > 0)]
-      rlm_model = rlm(BulkExpression ~ 0+., data=sampledata[,c(1,indices+1)])
+      rlm_model = rlm(BulkExpression ~ 0+., data=sampledata[, c(1, indices+1)])
       coefs = rlm_model$coefficients
     }
     
-    Sraw[j,indices] = coefs
+    Sraw[j, indices] = coefs
   }
   
   Sraw[Sraw < 0] = 0
