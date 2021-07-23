@@ -17,7 +17,7 @@ devtools::install_github("elolab/Rodeo")
 Below is a code example of how to run Rodeo after it has been installed. The example is very simplistic and can not be directly copy pasted if e.g. the input data is stored differently.
 
 
-``` sh
+```r 
 # Load required packages
 library(MASS)
 library(Rodeo)
