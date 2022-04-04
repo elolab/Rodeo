@@ -11,7 +11,7 @@ EstimateS = function(data, C){
   # Detect mean cell type expressions for each gene at time (i.e. j = gene)
   for (j in 1:nrow(data)) {
     
-    sampledata = as.data.frame(cbind(data[j,], t(C))) # rows: samples, cols: bulk expression of the current gene + cell types
+    sampledata = as.data.frame(cbind(as.numeric(data[j,]), t(C))) # rows: samples, cols: bulk expression of the current gene + cell types
     colnames(sampledata)[1] = "BulkExpression"
     
     # Fit regression and extract mean cell type expressions
