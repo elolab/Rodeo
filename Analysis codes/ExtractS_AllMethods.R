@@ -57,9 +57,9 @@ GetS_LRCDE = function(E, C, groups){
   
   # Extract S (general S is a weighted mean of case and control S, weights based on sample sizes)
   S_case = Stemplate
-  for(ct in colnames(S_case)){ S_case[,ct] = ctres[[ct]][,"case"]}
+  for(ct in colnames(S_case)){ S_case[, ct] = ctres[[ct]][, "case"]}
   S_control = Stemplate
-  for(ct in colnames(S_control)){ S_control[,ct] = ctres[[ct]][,"base"]}
+  for(ct in colnames(S_control)){ S_control[, ct] = ctres[[ct]][, "base"]}
   S_comb = (sum(groups==2)/length(groups) * S_case) + (sum(groups==1)/length(groups) * S_control)
   
   return(S_comb)
@@ -81,7 +81,7 @@ GetS_LinSeed = function(E, C){
   lo$selectGenes(nrow(E)/nrow(C))
   
   S = lo$signatures
-  S = S[rownames(E)[rownames(E) %in% rownames(S)],]
+  S = S[rownames(E)[rownames(E) %in% rownames(S)], ]
   return(S)
 }
 

@@ -1,5 +1,5 @@
-# Input: 'signature' is a signature matrix of average expressions in pure cell populations (cols: cell types, rows: genes),
-#        'data' is a bulk expression matrix (cols: samples, rows: genes)
+# Input: 'data' is a bulk expression matrix (cols: samples, rows: genes),
+#        'C' is a cell type proportion matrix (cols: samples, rows: cell types)
 # Output: cell type proportion matrix (cols: samples, rows: cell types)
 EstimateS = function(data, C){
   
@@ -22,11 +22,11 @@ EstimateS = function(data, C){
     # Re-fit without cell types with negative coefficient
     while(any(coefs < 0, na.rm=TRUE)){
       indices = indices[which(coefs > 0)]
-      rlm_model = rlm(BulkExpression ~ 0+., data=sampledata[,c(1,indices+1)])
+      rlm_model = rlm(BulkExpression ~ 0+., data=sampledata[, c(1, indices+1)])
       coefs = rlm_model$coefficients
     }
     
-    Sraw[j,indices] = coefs
+    Sraw[j, indices] = coefs
   }
   
   Sraw[Sraw < 0] = 0
